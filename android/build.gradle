@@ -1,0 +1,62 @@
+group 'com.baidu.flutter_bmflocation'
+version '1.0'
+
+buildscript {
+    repositories {
+        maven { url 'https://mirrors.cloud.tencent.com/gradle/'}
+        maven { url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        maven {url 'https://developer.huawei.com/repo/'}
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        maven { url 'https://mirrors.cloud.tencent.com/gradle/'}
+        maven { url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        maven {url 'https://developer.huawei.com/repo/'}
+        google()
+        mavenCentral()       
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 22
+        // ndk {
+        //     // 设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+        //     abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86","x86_64"
+        // }
+    }
+}
+
+dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:3.13.1'
+    implementation 'com.baidu.lbsyun:BaiduMapSDK_Location_All:9.5.2'
+    // implementation fileTree(includes: ['*.jar'], dir: 'libs')
+    // implementation rootProject.findProject(":flutter_bmfbase")
+}
